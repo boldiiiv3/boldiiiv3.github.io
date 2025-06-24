@@ -1,14 +1,14 @@
-/* Alap és témák */
+
 :root {
   --bg: #ffffff;
-  --text: #111111;
+  --text: #1a1a1a;
   --accent: #2575fc;
-  --card: #f0f0f0;
+  --card: #f7f7f7;
 }
 
 body.dark {
   --bg: #0f0f0f;
-  --text: #ffffff;
+  --text: #f0f0f0;
   --accent: #2575fc;
   --card: #1e1e1e;
 }
@@ -16,11 +16,107 @@ body.dark {
 body {
   background: var(--bg);
   color: var(--text);
+  font-family: system-ui, sans-serif;
+  margin: 0;
   transition: background 0.3s, color 0.3s;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Görgetésre megjelenítés animáció */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+header {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body.dark #themeToggle {
+  background: #222;
+  color: white;
+}
+
+h1, h2, h3, h4 {
+  margin: 0.5rem 0;
+}
+
+.intro, .projects, .contact, footer {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background: #eaeaea;
+  color: black;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #2a2a2a;
+  color: white;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+/* Scroll reveal animáció */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -30,131 +126,4 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Fejléc */
-header {
-  background: linear-gradient(to right, #6a11cb, var(--accent));
-  text-align: center;
-  padding: 4rem 1rem;
-  position: relative;
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.3rem;
-}
-
-header p {
-  font-size: 1.1rem;
-  color: #e0e0e0;
-  margin-bottom: 0.5rem;
-}
-
-#themeToggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #fff;
-  color: #000;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-}
-
-body.dark #themeToggle {
-  background: #222;
-  color: #fff;
-}
-
-/* Intro szekció */
-.intro, .projects, .contact, footer {
-  padding: 3rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Gomb az introban */
-.intro button {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.intro button:hover {
-  background: #1a5ddb;
-}
-
-/* Projektek grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-/* Projektkártya */
-.project-card {
-  background: var(--card);
-  padding: 1.5rem;
-  border-radius: 10px;
-  transition: transform 0.3s;
-  color: inherit;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-/* Kapcsolat űrlap */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-input, textarea {
-  padding: 1rem;
-  border: none;
-  border-radius: 6px;
-  background: #2a2a2a;
-  color: #fff;
-  resize: vertical;
-  min-height: 40px;
-}
-
-body:not(.dark) input,
-body:not(.dark) textarea {
-  background: #eee;
-  color: #000;
-}
-
-button[type="submit"] {
-  background: #6a11cb;
-  color: #fff;
-  padding: 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background: #531cae;
-}
-
-/* Lábléc */
-footer {
-  color: #aaa;
-  padding-bottom: 2rem;
 }
