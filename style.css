@@ -1,4 +1,4 @@
-
+/* Alap színek és téma */
 :root {
   --bg: #ffffff;
   --text: #1a1a1a;
@@ -46,6 +46,7 @@ header {
   color: black;
   border-radius: 5px;
   cursor: pointer;
+  user-select: none;
 }
 
 body.dark #themeToggle {
@@ -74,41 +75,29 @@ h1, h2, h3, h4 {
   padding: 1rem;
   border-radius: 8px;
   transition: transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .project-card:hover {
   transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
+.social-links {
+  margin-top: 1rem;
+  font-size: 1.1rem;
 }
 
-input, textarea {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
-  background: #eaeaea;
-  color: black;
+.social-links a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
 }
 
-body.dark input,
-body.dark textarea {
-  background: #2a2a2a;
-  color: white;
-}
-
-button[type="submit"] {
-  background: var(--accent);
-  color: white;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.social-links a:hover {
+  color: #0056d2;
+  text-decoration: underline;
 }
 
 footer {
