@@ -1,23 +1,26 @@
-
-const toggleBtn = document.getElementById("themeToggle");
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+// Theme toggle gomb
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
 });
 
-
-const reveals = document.querySelectorAll(".reveal");
+// Scroll reveal effekt
+const reveals = document.querySelectorAll('.reveal');
 
 function revealOnScroll() {
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const elementVisible = 150;
+  const windowHeight = window.innerHeight;
+  const revealPoint = 150;
 
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("visible");
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if(elementTop < windowHeight - revealPoint) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
     }
-  }
+  });
 }
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
