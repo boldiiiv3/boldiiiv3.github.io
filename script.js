@@ -1,28 +1,23 @@
-// Téma váltás gomb kezelése
+
 const toggleBtn = document.getElementById("themeToggle");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-// "Hire Me" gomb scroll sima görgetéshez
-document.getElementById("hireMeBtn").addEventListener("click", () => {
-  document.querySelector(".contact").scrollIntoView({ behavior: "smooth" });
-});
 
-// Scroll reveal funkció - elemek animált megjelenítése
-const revealElements = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal");
 
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
+function revealOnScroll() {
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementVisible = 150;
 
-  revealElements.forEach(el => {
-    const boxTop = el.getBoundingClientRect().top;
-
-    if (boxTop < triggerBottom) {
-      el.classList.add("visible");
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("visible");
     }
-  });
-};
+  }
+}
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
