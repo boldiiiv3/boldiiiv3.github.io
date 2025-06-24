@@ -2,77 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Boldiii | Full Stack Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boldiii | Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dark">
-
   <header>
-    <h1>Boldiii</h1>
-    <p>Full Stack Developer • Web Enthusiast</p>
-    <p>Based in Hungary 🇭🇺</p>
-    <button id="themeToggle">Toggle Theme</button>
+    <div class="container">
+      <h1>Boldiii</h1>
+      <p>Full Stack Developer from Hungary 🇭🇺</p>
+      <button id="themeToggle">Toggle Theme</button>
+    </div>
   </header>
 
-  <section class="intro reveal">
-    <h2>Hi, I'm Boldiii</h2>
-    <p>I build full-stack web applications with passion and precision.</p>
-    <button id="hireMeBtn">Hire Me</button>
-  </section>
+  <main>
+    <section class="intro reveal">
+      <div class="container">
+        <h2>Hello 👋</h2>
+        <p>I build modern web applications, and enjoy working with C++ and Python. Most of my work includes Discord bots and small web/C++ projects.</p>
+      </div>
+    </section>
 
-  <section class="projects reveal">
-    <h2>Projects</h2>
+    <section class="projects reveal">
+      <div class="container">
+        <h2>Projects</h2>
 
-    <h3>C++ Projects</h3>
-    <div class="project-grid">
-      <div class="project-card reveal">
-        <h4>Game Engine</h4>
-        <p>A lightweight 2D game engine built from scratch.</p>
-      </div>
-      <div class="project-card reveal">
-        <h4>Algorithms Library</h4>
-        <p>Collection of classic data structures and algorithms.</p>
-      </div>
-    </div>
+        <div class="project-section">
+          <h3>C++</h3>
+          <div class="project-grid">
+            <div class="project-card">
+              <h4>Utility Scripts</h4>
+              <p>Small tools and experiments written in C++.</p>
+            </div>
+            <div class="project-card">
+              <h4>Console Apps</h4>
+              <p>Text-based utilities and logic games.</p>
+            </div>
+          </div>
+        </div>
 
-    <h3>Python Projects</h3>
-    <div class="project-grid">
-      <div class="project-card reveal">
-        <h4>Discord Bot</h4>
-        <p>Feature-rich bot for server moderation and fun commands.</p>
-      </div>
-      <div class="project-card reveal">
-        <h4>Data Processing Tool</h4>
-        <p>Python scripts to clean and analyze large datasets.</p>
-      </div>
-    </div>
+        <div class="project-section">
+          <h3>Python</h3>
+          <div class="project-grid">
+            <div class="project-card">
+              <h4>Discord Bots</h4>
+              <p>Multipurpose bots for server moderation and entertainment.</p>
+            </div>
+            <div class="project-card">
+              <h4>Mini Tools</h4>
+              <p>Small utilities like converters and data handlers.</p>
+            </div>
+          </div>
+        </div>
 
-    <h3>Web Projects</h3>
-    <div class="project-grid">
-      <div class="project-card reveal">
-        <h4>E-commerce Platform</h4>
-        <p>Customizable online store with admin dashboard.</p>
+        <div class="project-section">
+          <h3>Web</h3>
+          <div class="project-grid">
+            <div class="project-card">
+              <h4>Mini Sites</h4>
+              <p>Practice projects in HTML/CSS/JS for learning purposes.</p>
+            </div>
+            <div class="project-card">
+              <h4>Portfolio</h4>
+              <p>This very website showcasing my skills.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="project-card reveal">
-        <h4>Portfolio Website</h4>
-        <p>Sleek, responsive site to showcase work and skills.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact reveal">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <section class="contact reveal">
+      <div class="container">
+        <h2>Contact</h2>
+        <form>
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <footer class="reveal">
-    <p>&copy; 2025 Boldiii. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 Boldiii</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
