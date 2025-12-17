@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kirkification</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: rgb(0, 0, 0);
+      color: rgb(0, 225, 255);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .center {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    #scare {
+      position: fixed;
+      inset: 0;
+      background: black;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #scare img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      animation: zoom 0.2s linear;
+    }
+
+    @keyframes zoom {
+      from { transform: scale(0.6); }
+      to { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center" onclick="triggerScare()">
+    KATTINTS IDE TE FITYMA
+  </div>
+
+  <div id="scare">
+ 
+    <img src="scare.jpg" alt="jumpscare" />
+    <audio id="scream" src="scream.mp3"></audio>
+  </div>
+
+  <script>
+  function triggerScare() {
+    const scare = document.getElementById('scare');
+    const sound = document.getElementById('scream');
+    const center = document.querySelector('.center');
+
+    center.style.display = 'none';   
+    scare.style.display = 'flex';    // most aztan megijesztjuk a budos ciganyokat
+
+    sound.currentTime = 0;
+    sound.volume = 1.0;
+    sound.play();
+
+
+  }
+</script>
+
+
+
+</body>
+</html>
